@@ -11,6 +11,10 @@ def load_notes():
         notes = []
     return notes
 
+# Функция для сохранения заметок в файл
+def save_notes(notes):
+    with open('notes.json', 'w') as file:
+        json.dump(notes, file)
 
 
 # Функция для добавления новой заметки
