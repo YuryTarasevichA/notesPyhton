@@ -11,6 +11,7 @@ def load_notes():
         notes = []
     return notes
 
+
 # Функция для сохранения заметок в файл
 def save_notes(notes):
     with open('notes.json', 'w') as file:
@@ -31,6 +32,7 @@ def add_note():
     notes.append(note)
     print("Заметка успешно сохранена")
 
+
 # Функция для редактирования существующей заметки
 def edit_note():
     note_id = int(input("Введите идентификатор заметки для редактирования: "))
@@ -43,7 +45,8 @@ def edit_note():
             note['updated_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             print("Заметка успешно отредактирована")
             return
-    print("Заметка с указанным идентификатором не найдена") 
+    print("Заметка с указанным идентификатором не найдена")
+
 
 # Функция для удаления существующей заметки
 def delete_note():
@@ -55,6 +58,7 @@ def delete_note():
             return
     print("Заметка с указанным идентификатором не найдена")
 
+
 # Функция для вывода списка всех заметок
 def list_notes():
     for note in notes:
@@ -64,6 +68,8 @@ def list_notes():
         print(f"Дата создания: {note['created_at']}")
         print()
 
+
+# Основная часть программы
 
 notes = load_notes()
 
