@@ -63,3 +63,34 @@ def list_notes():
         print(f"Тело заметки: {note['body']}")
         print(f"Дата создания: {note['created_at']}")
         print()
+
+
+notes = load_notes()
+
+while True:
+    print("Выберите команду для выполнения: \n"
+          "add - для добавления заметки\n"
+          "edit - для редактирования заметки\n"
+          "delete - для удаления заметки\n"
+          "list - для показа всех существующих заметок\n"
+          "save - для сохранения новых заметок\n"
+          "exit - для выхода из приложения заметок\n")
+    command = inputcommand = input("Введите команду: ")
+
+    if command == "add":
+        add_note()
+    elif command == "edit":
+        edit_note()
+    elif command == "delete":
+        delete_note()
+    elif command == "list":
+        list_notes()
+    elif command == "save":
+        save_notes(notes)
+        print("Заметки успешно сохранены")
+    elif command == "exit":
+        break
+    else:
+        print("Неверная команда")
+
+print("Программа завершена")
