@@ -54,3 +54,12 @@ def delete_note():
             print("Заметка успешно удалена")
             return
     print("Заметка с указанным идентификатором не найдена")
+
+# Функция для вывода списка всех заметок
+def list_notes():
+    for note in notes:
+        print(f"id заметки: {note['id']}")
+        print(f"Заголовок: {note['title']}")
+        print(f"Тело заметки: {note['body']}")
+        print(f"Дата создания: {note['created_at']}")
+        print()
